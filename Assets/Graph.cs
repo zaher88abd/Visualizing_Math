@@ -20,11 +20,11 @@ public class Graph : MonoBehaviour
         {
             Transform point = Instantiate(pointPrefab);
             //			point.localPosition = Vector3.right * ((i + 0.5f) / 5f - 1f);
-            position.x = (i + 0.5f)* step - 1f;
-            position.y = position.x * position.x;
+            position.x = (i + 0.5f) * step - 1f;
+            position.y = position.x * position.x * position.x;
             point.localPosition = position;
             point.localScale = scale;
-            point.SetParent(transform,false);
+            point.SetParent(transform, false);
         }
     }
 
