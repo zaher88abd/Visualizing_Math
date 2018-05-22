@@ -8,6 +8,7 @@ public class Graph : MonoBehaviour
     public Transform pointPrefab;
     [Range(10, 100)]
     public int resolution = 10;
+    Transform[] points;
 
     void Awake()
     {
@@ -16,6 +17,7 @@ public class Graph : MonoBehaviour
         Vector3 position;
         //position.y = 0f;
         position.z = 0f;
+        points = new Transform[resolution];
         for (int i = 0; i < resolution; i++)
         {
             Transform point = Instantiate(pointPrefab);
@@ -25,6 +27,7 @@ public class Graph : MonoBehaviour
             point.localPosition = position;
             point.localScale = scale;
             point.SetParent(transform, false);
+            points[i] = point;
         }
     }
 
@@ -37,6 +40,13 @@ public class Graph : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i < points.Length; i++)
+        {
+            Transform point = points[i];
+            Vector3 position = point.localPosition;
+            position.y = position.x * position.x * position.x;
+            point.localPosition = position;
+        }
 
     }
 }
