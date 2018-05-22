@@ -44,7 +44,7 @@ public class Graph : MonoBehaviour
         {
             Transform point = points[i];
             Vector3 position = point.localPosition;
-            position.y = position.x * position.x * position.x;
+            position.y = Mathf.Sin(Mathf.PI * position.x);
             point.localPosition = position;
         }
 
