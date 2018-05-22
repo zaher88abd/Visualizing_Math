@@ -9,13 +9,10 @@ public class Graph : MonoBehaviour
 
     public void Awake()
     {
-        int i = 0;
-        while (i < 10)
+        for (int i = 0; i < 10; i++)
         {
-            //			i = i + 1;
             Transform point = Instantiate(pointPrefab);
             point.localPosition = Vector3.right * i;
-            i = i + 1;
         }
     }
 
