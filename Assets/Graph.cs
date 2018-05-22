@@ -6,6 +6,7 @@ public class Graph : MonoBehaviour
 {
 
     public Transform pointPrefab;
+    public int resolution = 10;
 
     void Awake()
     {
