@@ -12,7 +12,7 @@ public class Graph : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             Transform point = Instantiate(pointPrefab);
-            point.localPosition = Vector3.right * i;
+            point.localPosition = Vector3.right * ((i + 0.5f) / 5f - 1f);
         }
     }
 
